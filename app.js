@@ -5,20 +5,21 @@ let increase = document.querySelector(".increase");
 let count = 0;
 
 decrease.addEventListener("click", () => {
-  count = count - 1;
+  value.style.color = "red";
+  if (count <= 0) {
+    value.textContent = 0;
+  } else {
+    count = count - 1;
     value.textContent = count;
-    value.style.color = "red";
-  
+  }
 });
 increase.addEventListener("click", () => {
   count = count + 1;
-    value.textContent = count;
-    value.style.color = "green";
-  
+  value.textContent = count;
+  value.style.color = "green";
 });
 reset.addEventListener("click", () => {
   count = 0;
-    value.textContent = count;
-    value.style.color = "white";
- 
+  value.textContent = count;
+  value.style.color = "white";
 });
